@@ -97,21 +97,30 @@ const CalcularXpPersonagem = () => {
 
   return (
     <div className="module-div">
-      <label htmlFor="xp-atual">Level atual</label>
+      <label>Level atual</label>
       <Select options={options}/>
       
-      <label htmlFor="xp-atual">Xp atual</label>
-      <input type="number" id="xp-atual" defaultValue={0} />
+      <label>Xp atual</label>
+      <input type="number" defaultValue={0} />
       
-      <label htmlFor="xp-atual">Crystal Solvent (resina)</label>
+      <label>Crystal Solvent (resina)</label>
       <input type="number" defaultValue={0} />
 
-      <label htmlFor="xp-atual">Level previsto</label>
+      <label>Level previsto</label>
       <Select options={options}/>
+
+      <div className='module-div' id="xp-extra">
+        <label>XP extra por dia</label>
+        <input type="number" defaultValue={0} />
+
+        <label>Dias de xp extra</label>
+        <input type="number" defaultValue={0} />
+      </div>
 
       <BtnCalcularXpPersonagem />
 
-      <label htmlFor="xp-atual" id="resultado-personagem"></label>
+      <label id="resultado-xp-total"></label>
+      <label id="resultado-personagem"></label>
     </div>
   )
 }
