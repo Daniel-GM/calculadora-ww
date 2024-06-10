@@ -1,6 +1,6 @@
 const Select = ({ options, handleChange }) => {
   return (
-    <select onChange={handleChange}>
+    <select>
       {options.map((option, index) => (
         <option key={index} value={option.value}>
           {option.label}
