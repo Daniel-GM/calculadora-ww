@@ -43,7 +43,7 @@
   color: #888;
 }
 
-.module-div {
+/* .module-div {
   display: flex;
   flex-direction: column;
 }
@@ -53,13 +53,4 @@
   margin-bottom: 15px;
   text-align: center;
 }
-
-#app-jsx {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-#app-jsx > * {
-  margin: 0px 10%;
-}
+ */

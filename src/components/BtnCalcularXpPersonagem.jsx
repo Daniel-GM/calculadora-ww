@@ -23,7 +23,7 @@ const BtnCalcularXpPersonagem = () => {
     const previsto = parseInt(document.querySelectorAll("#xp-personagem select")[1].value)
     const xp = parseInt(document.querySelectorAll("#xp-personagem input")[0].value)
     const quantidadeCrystal = parseInt(document.querySelectorAll("#xp-personagem input")[1].value)
-    
+
     const xpExtra = parseInt(document.querySelectorAll("#xp-extra input")[0].value)
     const diaExtra = parseInt(document.querySelectorAll("#xp-extra input")[1].value)
 
