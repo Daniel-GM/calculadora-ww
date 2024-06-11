@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import BtnCalcularXpPersonagem from './BtnCalcularXpPersonagem'
 import Select from "./Select"
 import Input from './Input';
@@ -28,11 +27,8 @@ const CalcularXpPersonagem = () => {
   return (
     <div className="module-div">
       <Select label="Level atual" options={options} />
-
       <Input label={"Xp atual"} type={"number"} defaultValue={0} />
-
       <Input label={"Crystal Solvent (resina)"} type={"number"} defaultValue={0} />
-
       <Select label="Level previsto" options={options} />
 
       <div className='module-div' id="xp-extra">
@@ -44,6 +40,7 @@ const CalcularXpPersonagem = () => {
 
       <label id="resultado-xp-total"></label>
       <label id="resultado-personagem"></label>
+      <label id="data"></label>
     </div>
   )
 }
