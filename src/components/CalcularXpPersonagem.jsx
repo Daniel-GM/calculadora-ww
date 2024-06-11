@@ -25,12 +25,12 @@ const CalcularXpPersonagem = () => {
   const options = gerarOpcoes()
 
   return (
-    <div className="module-div">
+    <div className="module-div" id='xp-personagem'>
       <Select label="Level atual" options={options} />
       <Input label={"Xp atual"} type={"number"} defaultValue={0} />
       <Input label={"Crystal Solvent (resina)"} type={"number"} defaultValue={0} />
       <Select label="Level previsto" options={options} />
-
+      
       <div className='module-div' id="xp-extra">
         <Input label={"XP extra por dia"} type={"number"} defaultValue={0} />
         <Input label={"Dias de xp extra"} type={"number"} defaultValue={0} />
