@@ -43,7 +43,7 @@
   color: #888;
 }
 
-/* .module-div {
+.module-div {
   display: flex;
   flex-direction: column;
 }
@@ -53,4 +53,13 @@
   margin-bottom: 15px;
   text-align: center;
 }
- */
+
+.active {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+a.nav-link,
+a.nav-link:hover {
+  color: #fff;
+}
