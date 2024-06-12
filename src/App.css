@@ -63,3 +63,8 @@ a.nav-link,
 a.nav-link:hover {
   color: #fff;
 }
+
+ul.nav li{
+  flex-basis: 0;
+  flex-grow: 1;
+}

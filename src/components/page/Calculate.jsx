@@ -7,6 +7,8 @@ import CalcularXpEcho from "../CalcularXpEcho";
 import CalcularXpPersonagem from "../CalcularXpPersonagem";
 import CalcularWaveplate from "../CalcularWaveplate";
 
+import Nav from "react-bootstrap/Nav";
+
 const Calculate = () => {
   const [activeTab, setActiveTab] = useState("personagem");
 
@@ -78,7 +80,7 @@ const Calculate = () => {
         >
           <Col xl={6} md={8} xs={12}>
             <h2>Waveplate (Resina)</h2>
-            <CalcularWaveplate/>
+            <CalcularWaveplate />
           </Col>
         </div>
       </div>
