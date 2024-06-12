@@ -14,10 +14,10 @@ const CalcularWaveplate = (hora, minuto) => {
 
   horaCalculada = horaCalculada % 24
 
-  const horaFormatada = horaCalculada.toString().padStart(2, '0');
-  const minutoFormatado = minutoCalculado.toString().padStart(2, '0');
+  const horaFormatada = horaCalculada.toString().padStart(2, '0')
+  const minutoFormatado = minutoCalculado.toString().padStart(2, '0')
 
-  return `Waveplate vai estar cheia ás ${horaFormatada}:${minutoFormatado}`
+  return `Waveplate vai estar cheia às ${horaFormatada}:${minutoFormatado}`
 }
   
 const handleClick = () => {
