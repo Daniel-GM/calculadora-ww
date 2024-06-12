@@ -1,12 +1,34 @@
-import './App.css';
-import Calculate from './components/page/Calculate'
+import { useState } from "react";
+import "./App.css";
+import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
+
+import Calculate from "./components/page/Calculate";
+import { Container } from "react-bootstrap";
 
 function App() {
+  const [key, setKey] = useState("calculadora");
 
   return (
     <>
-      <div ></div>
-      <Calculate />
+      <Container id="main-container">
+        <Tabs
+          id="controlled-tab"
+          activeKey={key}
+          onSelect={(k) => setKey(k)}
+          className="mb-3"
+        >
+          <Tab eventKey="calculadora" title="Calculadora">
+            <Calculate />
+          </Tab>
+          <Tab eventKey="eventos" title="Eventos">
+            Eventos em construção
+          </Tab>
+          <Tab eventKey="eficiencia" title="Eficiência">
+            WuWa Eficiência em construção
+          </Tab>
+        </Tabs>
+      </Container>
     </>
   );
 }

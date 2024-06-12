@@ -13,7 +13,7 @@ const Calculate = () => {
   const [activeTab, setActiveTab] = useState("personagem");
 
   return (
-    <Container className="w-100" id="calculadoras">
+    <Container className="w-75" id="calculadoras">
       <ul className="nav nav-tabs">
         <li className="nav-item">
           <a

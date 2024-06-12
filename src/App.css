@@ -60,11 +60,28 @@
 }
 
 a.nav-link,
-a.nav-link:hover {
+a.nav-link:hover,
+#main-container button,
+#main-container button {
   color: #fff;
 }
 
-ul.nav li{
+#controlled-tab .active {
+  color: #000;
+}
+
+ul.nav li,
+#main-container button {
   flex-basis: 0;
   flex-grow: 1;
+}
+
+#main-container button {
+  width: 100%;
+  border-radius: 0px;
+}
+
+.tab-content.mb-5 {
+  border: 1px solid #fff;
+  padding: 5%;
 }
