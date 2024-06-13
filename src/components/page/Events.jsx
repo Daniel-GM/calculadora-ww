@@ -43,6 +43,7 @@ const Events = () => {
         horaFim="05:59"
         text="Complete Missões de Exploração diariamente para obter Pontos de Exploração e reivindique recompensas após alcançar marcos de Pontos de Exploração."
       />
+
     </Accordion>
   );
 };
