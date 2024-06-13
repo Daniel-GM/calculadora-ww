@@ -1,0 +1,19 @@
+@media (max-width: 600px) {
+    #calculadoras,
+    .w-75.accordion {
+        width: 100% !important;
+    }
+
+    #root {
+        padding: 1rem;
+    }
+
+    .accordion-button.collapsed,
+    #root {
+        font-size: 14px;
+    }
+
+    #main-container {
+        padding: 0px;
+    }
+}

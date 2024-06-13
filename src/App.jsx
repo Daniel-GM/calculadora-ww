@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import "./components/Responsividade.css";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 
