@@ -5,6 +5,7 @@ import Tabs from "react-bootstrap/Tabs";
 
 import Calculate from "./components/page/Calculate";
 import { Container } from "react-bootstrap";
+import Events from "./components/page/Events";
 
 function App() {
   const [key, setKey] = useState("calculadora");
@@ -22,7 +23,7 @@ function App() {
             <Calculate />
           </Tab>
           <Tab eventKey="eventos" title="Eventos">
-            Eventos em construção
+            <Events />
           </Tab>
           <Tab eventKey="eficiencia" title="Eficiência">
             WuWa Eficiência em construção
