@@ -47,7 +47,7 @@ const DivEventos = ({ eventKey, title, text, dataInicio, horaInicio, dataFim, ho
       <Accordion.Header className={"header"}>{title}</Accordion.Header>
       <span className='data-evento'>{diferencaTempo}</span>
       <Accordion.Body style={bodyStyle}>
-        <p>{dataInicio} ~ {dataFim}</p> Descrição: {text}
+        <p>{dataInicio} {horaInicio} ~ {dataFim} {horaFim}</p> Descrição: {text}
       </Accordion.Body>
     </Accordion.Item>
   )
