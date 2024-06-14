@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../../App";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import CalcularXpEcho from "../CalcularXpEcho";

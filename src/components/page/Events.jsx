@@ -10,7 +10,7 @@ const Events = () => {
         dataInicio="30/05"
         dataFim="17/06"
         horaInicio="23:00"
-        horaFim="06:00"
+        horaFim="05:59"
         text="-"
       />
 
@@ -30,7 +30,7 @@ const Events = () => {
         dataInicio="05/06"
         dataFim="27/06"
         horaInicio="20:00"
-        horaFim="06:00"
+        horaFim="05:59"
         text="-"
       />
 
@@ -44,6 +44,15 @@ const Events = () => {
         text="Complete Missões de Exploração diariamente para obter Pontos de Exploração e reivindique recompensas após alcançar marcos de Pontos de Exploração."
       />
 
+      <DivEventos
+        eventKey="4"
+        title="Second Coming of Solaris"
+        dataInicio="13/06"
+        dataFim="27/06"
+        horaInicio="12:00"
+        horaFim="05:59"
+        text="-"
+      />
     </Accordion>
   );
 };

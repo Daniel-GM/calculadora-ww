@@ -1,12 +1,14 @@
-import { useState } from "react";
 import "./App.css";
 import "./components/Responsividade.css";
+
+import { useState } from "react";
+import { Container } from "react-bootstrap";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 
 import Calculate from "./components/page/Calculate";
-import { Container } from "react-bootstrap";
 import Events from "./components/page/Events";
+import Eficiencia from "./components/page/Eficiencia";
 
 function App() {
   const [key, setKey] = useState("calculadora");
@@ -27,7 +29,8 @@ function App() {
             <Events />
           </Tab>
           <Tab eventKey="eficiencia" title="Eficiência">
-            WuWa Eficiência em construção
+            {/* <p>WuWa Eficiência em construção</p> */}
+            <Eficiencia />
           </Tab>
         </Tabs>
       </Container>
