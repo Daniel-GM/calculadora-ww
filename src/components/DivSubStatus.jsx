@@ -1,8 +1,9 @@
 import { useState } from "react";
+import "./DivSubStatus.css"
 
 
 const DivSubStatus = () => {
-  const echos = [
+  const subStatus = [
     {
       name: "HP",
       min: "320",
@@ -70,26 +71,28 @@ const DivSubStatus = () => {
     },
   ];
 
-  const handleEchoChange = (event) => {
-    const selected = echos.find(echo => echo.cost === event.target.value);
-    setSelectedEcho(selected);
+  const handleSubStatusChange = (event) => {
+    const selected = subStatus.find(substatus => substatus.cost === event.target.value);
+    setSelectedSubStatus(selected);
   }
 
-  const [selectedEcho, setSelectedEcho] = useState(echos[0]);
+  const [selectedSubStatus, setSelectedSubStatus] = useState(subStatus[0]);
 
   return (
-    <div>
-      sub 1
+    <div className="div-substatus">
+      {/* {substatus.name} */}
       <div className="dados-echo">
-        <select onChange={handleEchoChange}>
-          {echos.map((echo, index) => (
-            <option key={index} value={echo.cost}>
-              {echo.name}
+        <select onChange={handleSubStatusChange}>
+          {subStatus.map((substatus, index) => (
+            <option key={index} value={substatus.cost}>
+              {substatus.name}
             </option>
           ))}
         </select>
         <input></input>
       </div>
+      <div className="eficiencia-bar"></div>
+
     </div>
   )
 }
