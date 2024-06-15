@@ -1,3 +1,15 @@
+@media (max-width: 1200px) {
+    #div-cards-echo {
+        height: auto !important;
+        flex-direction: column;
+    }
+
+    .cards-echo {
+        width: 45% !important;
+        margin: 15px 0px;
+    }
+}
+
 @media (max-width: 600px) {
     #calculadoras,
     .w-75.accordion {
@@ -15,5 +27,10 @@
 
     #main-container {
         padding: 0px;
+    }
+
+    .cards-echo {
+        width: 75% !important;
+        margin: 15px 0px;
     }
 }

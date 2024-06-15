@@ -17,8 +17,8 @@ div#testeDiv div:first-child {
 
 div#testeDiv div:last-child {
   /* background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(213,186,188,0.25) 20%, rgba(220,131,106,1) 100%); */
-  /* background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(19,76,76,0.25) 20%, rgba(65,178,168,1) 100%); */
-  background: linear-gradient(270deg, rgba(255, 255, 255, 0.25) 0%, rgba(146,146,166,0.25) 40%, rgba(36,36,36,1) 100%);
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(19,76,76,0.25) 20%, rgba(65,178,168,1) 100%);
+  /* background: linear-gradient(270deg, rgba(255, 255, 255, 0.25) 0%, rgba(146,146,166,0.25) 40%, rgba(36,36,36,1) 100%); */
   position: absolute;
   flex: 1;
   z-index: 10;

@@ -1,7 +1,9 @@
 import { useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import CardEcho from "./CardEcho";
 import "./DivEficiencia.css";
+import "./CardEcho.css";
 
 const DivEficiencia = () => {
   const characters = [
@@ -39,7 +41,13 @@ const DivEficiencia = () => {
         <div></div>
       </div>
 
-      <div></div>
+      <div id="div-cards-echo">
+        <CardEcho />
+        <CardEcho />
+        <CardEcho />
+        <CardEcho />
+        <CardEcho />
+      </div>
     </div>
   );
 };

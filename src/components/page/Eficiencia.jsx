@@ -5,12 +5,12 @@ const Eficiencia = () => {
   const [divEficiencia, setDivEficiencia] = useState([])
 
   const handleDivEficiencia = () => {
-    setDivEficiencia([...divEficiencia, <DivEficiencia key={divEficiencia.length}/> ])
+    setDivEficiencia([ ...divEficiencia, <DivEficiencia key={divEficiencia.length}/> ])
   }
 
   return (
-    <div  className="w-75" id="eficiencia">
-      <button onClick={handleDivEficiencia}>+ Adicionar personagem</button>
+    <div  className="w-100" id="eficiencia">
+      <button className="w-25" onClick={handleDivEficiencia}>+ Adicionar personagem</button>
       <div>
         {divEficiencia}
       </div>
