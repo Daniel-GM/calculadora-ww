@@ -7,7 +7,7 @@ const DivEchoSelect = () => {
   const echos = [
     {
       name: "Aero Predator",
-      image: "https://static.dotgg.gg/wuthering-waves/echoes/aero-predator-icon.webp",
+      image: "/calculadora-ww/public/echos/aero-predator-icon.webp",
       cost: 1,
     },
     {

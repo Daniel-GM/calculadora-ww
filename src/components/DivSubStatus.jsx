@@ -93,11 +93,14 @@ const DivSubStatus = ({ index, updateEficiencia }) => {
     const min = parseFloat(selectedSubStatus.min);
     const max = parseFloat(selectedSubStatus.max);
 
-    const dividendo = value - min
+    const dividendo = value - min 
     const divisor = max - min
     const eficienciaCalc = (dividendo / divisor) * 100
 
-    updateEficiencia(index, eficienciaCalc)
+    if(eficienciaCalc >= 0 && eficienciaCalc <= 100)
+      updateEficiencia(index, eficienciaCalc)
+    else
+      updateEficiencia(index, 0)
     setEficiencia(eficienciaCalc)
   }
 
