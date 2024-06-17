@@ -49,11 +49,9 @@ const DivEficiencia = () => {
       </div>
 
       <div id="div-cards-echo">
-        <CardEcho />
-        <CardEcho />
-        <CardEcho />
-        <CardEcho />
-        <CardEcho />
+        {Array.from({ length: 5 }, (_, index) => (
+          <CardEcho key={index} id={`card-echo-${index}`} />
+        ))}
       </div>
     </div>
   );
