@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useId  } from "react";
+import React, { useState, useEffect, useId } from "react";
 import "./DivEchoSelect.css";
 
 const DivEchoSelect = ({ indexPai }) => {
@@ -351,7 +351,7 @@ const DivEchoSelect = ({ indexPai }) => {
     if (savedSelectedEcho) {
       setSelectedEcho(savedSelectedEcho);
     }
-  }, [indexPai]);
+  }, [indexPai, id]);
 
   const handleEchoChange = (event) => {
     const selected = echos.find((echo) => echo.name === event.target.value);
@@ -378,7 +378,7 @@ const DivEchoSelect = ({ indexPai }) => {
 
   return (
     <div className="component-echo">
-      <select onChange={handleEchoChange}>
+      <select onChange={handleEchoChange} value={selectedEcho.name}>
         <optgroup label="Custo 1">
           {categorizedEchos[1].map((echo, index) => (
             <option key={index} value={echo.name}>

@@ -46,7 +46,7 @@ const DivEficiencia = ({ indexPai }) => {
 
   return (
     <div>
-      <select onChange={handleCharacterChange}>
+      <select onChange={handleCharacterChange} value={selectedCharacter.url}>
         {characters.map((character, index) => (
           <option key={index} value={character.url}>
             {character.name}

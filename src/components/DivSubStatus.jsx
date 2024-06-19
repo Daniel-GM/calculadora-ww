@@ -18,7 +18,6 @@ const DivSubStatus = ({ index, updateEficiencia, indexPai, idCard }) => {
     { name: "Resonance Liberation DMG Bonus", min: "6.4%", max: "11.6" },
   ];
 
-  const [eficiencia, setEficiencia] = useState(0);
   const localStorageKey = `DivSubStatus_${idCard}_${indexPai}_${index}`;
 
   const [selectedSubStatus, setSelectedSubStatus] = useState(() => {
@@ -46,6 +45,8 @@ const DivSubStatus = ({ index, updateEficiencia, indexPai, idCard }) => {
     }
     return "";
   });
+
+  const [eficiencia, setEficiencia] = useState(0);
 
   const getBarEficiencia = () => {
     if (eficiencia < 40) return "rgba(255,0,0,1)";
@@ -100,7 +101,6 @@ const DivSubStatus = ({ index, updateEficiencia, indexPai, idCard }) => {
     storeData();
   }, [selectedSubStatus, inputValue]);
 
-  // Recalculate efficiency when component mounts with values from localStorage
   useEffect(() => {
     if (inputValue) {
       const event = { target: { value: inputValue } };
