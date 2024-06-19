@@ -3,20 +3,118 @@ import CardEcho from "./CardEcho";
 import "./DivEficiencia.css";
 import "./CardEcho.css";
 
+
+/*
+* Glacio    "90deg, #ffffff00 0%, #266FA140 20%, #2AB0C1 100%"
+* Fusion    "90deg, #ffffff00 0%, #d5babc40 20%, #dc836a 100%"
+* Electro   "90deg, #ffffff00 0%, #7036AB40 20%, #A42EA8 100%"
+* Aero      "90deg, #ffffff00 0%, 134c4c40 20%, #41b2a8 100%"
+* Spectro   "90deg, #ffffff00 0%, #A4932140 20%, #B3A521 100%"
+* Havoc     "90deg, #ffffff00 0%, #97246A40 20%, #831857 100%"
+* Physical  
+*/
+
+
 const characters = [
   {
+    name: "Aalto",
+    url: "/calculadora-ww/characters/aalto-image.webp",
+    gradient: "90deg, #ffffff00 0%, #134c4c40 20%, #41b2a8 100%",
+  },
+  {
+    name: "Baizhi",
+    url: "/calculadora-ww/characters/baizhi-image.webp",
+    gradient: "90deg, #ffffff00 0%, #266FA140 20%, #2AB0C1 100%",
+  },
+  {
+    name: "Calcharo",
+    url: "/calculadora-ww/characters/calcharo-image.webp",
+    gradient: "90deg, #ffffff00 0%, #7036AB40 20%, #A42EA8 100%",
+  },
+  {
+    name: "Changli",
+    url: "/calculadora-ww/characters/changli-image.webp",
+    gradient: "90deg, #ffffff00 0%, #d5babc40 20%, #dc836a 100%",
+  },
+  {
+    name: "Chixia",
+    url: "/calculadora-ww/characters/chixia-image.webp",
+    gradient: "90deg, #ffffff00 0%, #d5babc40 20%, #dc836a 100%",
+  },
+  {
+    name: "Danjin",
+    url: "/calculadora-ww/characters/danjin-image.webp",
+    gradient: "90deg, #ffffff00 0%, #97246A40 20%, #831857 100%",
+  },
+  {
     name: "Encore",
-    url:
-      "https://wutheringwaves.gg/wp-content/uploads/sites/8/2024/05/Wuthering-Waves-Encore-Build-Guide-300x221.png",
-    gradient:
-      "90deg, rgba(255,255,255,0) 0%, rgba(213,186,188,0.25) 20%, rgba(220,131,106,1) 100%",
+    url: "/calculadora-ww/characters/encore-image.webp",
+    gradient: "90deg, #ffffff00 0%, #d5babc40 20%, #dc836a 100%",
+  },
+  {
+    name: "Jianxin",
+    url: "/calculadora-ww/characters/jianxin-image.webp",
+    gradient: "90deg, #ffffff00 0%, #134c4c40 20%, #41b2a8 100%",
+  },
+  {
+    name: "Jinhsi",
+    url: "/calculadora-ww/characters/jinhsi-image.webp",
+    gradient: "90deg, #ffffff00 0%, #A4932140 20%, #B3A521 100%",
   },
   {
     name: "Jiyan",
-    url:
-      "https://wutheringwaves.gg/wp-content/uploads/sites/8/2024/05/Wuthering-Waves-Jiyan-Build-Guide-300x169.png",
-    gradient:
-      "90deg, rgba(255,255,255,0) 0%, rgba(19,76,76,0.25) 20%, rgba(65,178,168,1) 100%",
+    url: "/calculadora-ww/characters/jiyan-image.webp",
+    gradient: "90deg, #ffffff00 0%, #134c4c40 20%, #41b2a8 100%",
+  },
+  {
+    name: "Lingyang",
+    url: "/calculadora-ww/characters/lingyang-image.webp",
+    gradient: "90deg, #ffffff00 0%, #266FA140 20%, #2AB0C1 100%",
+  },
+  {
+    name: "Mortefi",
+    url: "/calculadora-ww/characters/mortefi-image.webp",
+    gradient: "90deg, #ffffff00 0%, #d5babc40 20%, #dc836a 100%",
+  },
+  {
+    name: "Rover (Female)",
+    url: "/calculadora-ww/characters/rover-female-image.webp",
+    gradient: "90deg, #ffffff00 0%, #A4932140 20%, #B3A521 100%",
+  },
+  {
+    name: "Rover (Male)",
+    url: "/calculadora-ww/characters/rover-male-image.webp",
+    gradient: "90deg, #ffffff00 0%, #A4932140 20%, #B3A521 100%",
+  },
+  {
+    name: "Sanhua",
+    url: "/calculadora-ww/characters/sanhua-image.webp",
+    gradient: "90deg, #ffffff00 0%, #266FA140 20%, #2AB0C1 100%",
+  },
+  {
+    name: "Taoqi",
+    url: "/calculadora-ww/characters/taoqi-image.webp",
+    gradient: "90deg, #ffffff00 0%, #97246A40 20%, #831857 100%",
+  },
+  {
+    name: "Verina",
+    url: "/calculadora-ww/characters/verina-image.webp",
+    gradient: "90deg, #ffffff00 0%, #A4932140 20%, #B3A521 100%",
+  },
+  {
+    name: "Yangyang",
+    url: "/calculadora-ww/characters/yangyang-image.webp",
+    gradient: "90deg, #ffffff00 0%, #134c4c40 20%, #41b2a8 100%",
+  },
+  {
+    name: "Yinlin",
+    url: "/calculadora-ww/characters/yinlin-image.webp",
+    gradient: "90deg, #ffffff00 0%, #7036AB40 20%, #A42EA8 100%",
+  },
+  {
+    name: "Yuanwu",
+    url: "/calculadora-ww/characters/yuanwu-image.webp",
+    gradient: "90deg, #ffffff00 0%, #7036AB40 20%, #A42EA8 100%",
   },
 ];
 

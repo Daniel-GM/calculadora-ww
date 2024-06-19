@@ -53,6 +53,16 @@ const Events = () => {
         horaFim="05:59"
         text="-"
       />
+
+      <DivEventos
+        eventKey="5"
+        title="Chord Cleansing"
+        dataInicio="20/06"
+        dataFim="27/06"
+        horaInicio="06:00"
+        horaFim="05:59"
+        text="-"
+      />
     </Accordion>
   );
 };
