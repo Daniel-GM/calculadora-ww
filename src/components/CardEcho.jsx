@@ -1,9 +1,11 @@
-import { useState } from "react"
+import { useState, useId } from "react"
 import "./CardEcho.css"
 import DivEchoSelect from "./DivEchoSelect"
 import DivSubStatus from "./DivSubStatus"
 
-const CardEcho = () => {
+const CardEcho = ({ indexPai }) => {
+  const idCard = useId();
+
   const [eficiencias, setEficiencias] = useState(Array(5).fill(0))
 
   const updateEficiencia = (index, value) => {
@@ -22,9 +24,9 @@ const CardEcho = () => {
   return (
     <div className="cards-echo">
       <h4 className="score">{calculateScore()}</h4>
-      <DivEchoSelect />
+      <DivEchoSelect indexPai = {indexPai} />
       {eficiencias.map((_, index) => (
-        <DivSubStatus key={index} index={index} updateEficiencia={updateEficiencia} />
+        <DivSubStatus key={index} index={index} updateEficiencia={updateEficiencia} indexPai = {indexPai} idCard={idCard}/>
       ))}
     </div>
   )

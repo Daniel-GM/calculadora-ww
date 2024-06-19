@@ -1,8 +1,8 @@
-import { useState } from "react";
-import "./DivEchoSelect.css"
+import React, { useState, useEffect, useId  } from "react";
+import "./DivEchoSelect.css";
 
-
-const DivEchoSelect = () => {
+const DivEchoSelect = ({ indexPai }) => {
+  const id = useId();
 
   const echos = [
     {
@@ -340,14 +340,24 @@ const DivEchoSelect = () => {
       image: "/calculadora-ww/echos/zig-zag-icon.webp",
       cost: 1,
     },
-  ]
+  ];
 
   const [selectedEcho, setSelectedEcho] = useState(echos[0]);
 
+  useEffect(() => {
+    const savedSelectedEcho = JSON.parse(
+      localStorage.getItem(`selectedEcho-${indexPai}-${id}`)
+    );
+    if (savedSelectedEcho) {
+      setSelectedEcho(savedSelectedEcho);
+    }
+  }, [indexPai]);
+
   const handleEchoChange = (event) => {
-    const selected = echos.find(echo => echo.name === event.target.value)
-    setSelectedEcho(selected)
-  }
+    const selected = echos.find((echo) => echo.name === event.target.value);
+    setSelectedEcho(selected);
+    localStorage.setItem(`selectedEcho-${indexPai}-${id}`, JSON.stringify(selected));
+  };
 
   const bgImage = {
     width: "100px",
@@ -358,13 +368,13 @@ const DivEchoSelect = () => {
     border: "1px solid #fff",
     borderRadius: "50px",
     marginTop: "10px",
-  }
+  };
 
   const categorizedEchos = {
-    4: echos.filter(echo => echo.cost === 4),
-    3: echos.filter(echo => echo.cost === 3),
-    1: echos.filter(echo => echo.cost === 1),
-  }
+    4: echos.filter((echo) => echo.cost === 4),
+    3: echos.filter((echo) => echo.cost === 3),
+    1: echos.filter((echo) => echo.cost === 1),
+  };
 
   return (
     <div className="component-echo">
@@ -394,7 +404,7 @@ const DivEchoSelect = () => {
 
       <div style={bgImage}></div>
     </div>
-  )
-}
+  );
+};
 
-export default DivEchoSelect
+export default DivEchoSelect;

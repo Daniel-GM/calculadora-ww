@@ -1,29 +1,39 @@
-import { useState } from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import React, { useState, useEffect } from "react";
 import CardEcho from "./CardEcho";
 import "./DivEficiencia.css";
 import "./CardEcho.css";
 
-const DivEficiencia = () => {
-  const characters = [
-    {
-      name: "Encore",
-      url: "https://wutheringwaves.gg/wp-content/uploads/sites/8/2024/05/Wuthering-Waves-Encore-Build-Guide-300x221.png",
-      gradient: "90deg, rgba(255,255,255,0) 0%, rgba(213,186,188,0.25) 20%, rgba(220,131,106,1) 100%",
-    },
-    {
-      name: "Jiyan",
-      url: "https://wutheringwaves.gg/wp-content/uploads/sites/8/2024/05/Wuthering-Waves-Jiyan-Build-Guide-300x169.png",
-      gradient: "90deg, rgba(255,255,255,0) 0%, rgba(19,76,76,0.25) 20%, rgba(65,178,168,1) 100%",
-    },
-  ];
+const characters = [
+  {
+    name: "Encore",
+    url:
+      "https://wutheringwaves.gg/wp-content/uploads/sites/8/2024/05/Wuthering-Waves-Encore-Build-Guide-300x221.png",
+    gradient:
+      "90deg, rgba(255,255,255,0) 0%, rgba(213,186,188,0.25) 20%, rgba(220,131,106,1) 100%",
+  },
+  {
+    name: "Jiyan",
+    url:
+      "https://wutheringwaves.gg/wp-content/uploads/sites/8/2024/05/Wuthering-Waves-Jiyan-Build-Guide-300x169.png",
+    gradient:
+      "90deg, rgba(255,255,255,0) 0%, rgba(19,76,76,0.25) 20%, rgba(65,178,168,1) 100%",
+  },
+];
 
+const DivEficiencia = ({ indexPai }) => {
   const [selectedCharacter, setSelectedCharacter] = useState(characters[0]);
 
+  useEffect(() => {
+    const savedSelectedCharacter = JSON.parse(localStorage.getItem(`selectedCharacter-${indexPai}`));
+    if (savedSelectedCharacter) {
+      setSelectedCharacter(savedSelectedCharacter);
+    }
+  }, [indexPai]);
+
   const handleCharacterChange = (event) => {
-    const selected = characters.find(character => character.url === event.target.value);
+    const selected = characters.find((character) => character.url === event.target.value);
     setSelectedCharacter(selected);
+    localStorage.setItem(`selectedCharacter-${indexPai}`, JSON.stringify(selected));
   };
 
   const bgImage = {
@@ -31,8 +41,8 @@ const DivEficiencia = () => {
   };
 
   const bgColor = {
-    background: `linear-gradient(${selectedCharacter.gradient})`
-  }
+    background: `linear-gradient(${selectedCharacter.gradient})`,
+  };
 
   return (
     <div>
@@ -50,7 +60,7 @@ const DivEficiencia = () => {
 
       <div id="div-cards-echo">
         {Array.from({ length: 5 }, (_, index) => (
-          <CardEcho key={index} id={`card-echo-${index}`} />
+          <CardEcho key={index} id={`card-echo-${index}`} indexPai={indexPai} />
         ))}
       </div>
     </div>
