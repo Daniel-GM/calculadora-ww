@@ -3,7 +3,6 @@ import CardEcho from "./CardEcho";
 import "./DivEficiencia.css";
 import "./CardEcho.css";
 
-
 /*
 * Glacio    "90deg, #ffffff00 0%, #266FA140 20%, #2AB0C1 100%"
 * Fusion    "90deg, #ffffff00 0%, #d5babc40 20%, #dc836a 100%"
@@ -13,7 +12,6 @@ import "./CardEcho.css";
 * Havoc     "90deg, #ffffff00 0%, #97246A40 20%, #831857 100%"
 * Physical  
 */
-
 
 const characters = [
   {
@@ -120,6 +118,7 @@ const characters = [
 
 const DivEficiencia = ({ indexPai }) => {
   const [selectedCharacter, setSelectedCharacter] = useState(characters[0]);
+  const [visibilidade, setVisibilidade] = useState(true)
 
   useEffect(() => {
     const savedSelectedCharacter = JSON.parse(localStorage.getItem(`selectedCharacter-${indexPai}`));
@@ -127,6 +126,10 @@ const DivEficiencia = ({ indexPai }) => {
       setSelectedCharacter(savedSelectedCharacter);
     }
   }, [indexPai]);
+
+  const handleTrocaVisibilidade = () => {
+    setVisibilidade(!visibilidade)
+  }
 
   const handleCharacterChange = (event) => {
     const selected = characters.find((character) => character.url === event.target.value);
@@ -151,16 +154,17 @@ const DivEficiencia = ({ indexPai }) => {
           </option>
         ))}
       </select>
-      <div id="testeDiv">
+      <div id="testeDiv" onClick={handleTrocaVisibilidade} style={{ cursor: 'pointer' }}>
         <div style={bgImage}></div>
         <div style={bgColor}></div>
       </div>
-
-      <div id="div-cards-echo">
-        {Array.from({ length: 5 }, (_, index) => (
-          <CardEcho key={index} id={`card-echo-${index}`} indexPai={indexPai} />
-        ))}
-      </div>
+      {visibilidade &&
+        <div id="div-cards-echo">
+          {Array.from({ length: 5 }, (_, index) => (
+            <CardEcho key={index} id={`card-echo-${index}`} indexPai={indexPai} />
+          ))}
+        </div>
+      }
     </div>
   );
 };
