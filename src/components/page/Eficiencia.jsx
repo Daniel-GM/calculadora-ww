@@ -22,16 +22,24 @@ const Eficiencia = () => {
   };
 
   const handleDeleteDivEficiencia = (indexPai) => {
-    const newDivEficiencia = divEficiencia.filter(
-      (item) => item.indexPai !== indexPai
-    );
-    setDivEficiencia(newDivEficiencia);
-    localStorage.setItem("divEficiencia", JSON.stringify(newDivEficiencia));
-    localStorage.removeItem(`selectedCharacter-${indexPai}`);
-    for (let i = 0; i < 5; i++) {
-      localStorage.removeItem(`CardEcho_card-echo-${i}_${indexPai}`);
-      for (let j = 0; j < 5; j++) {
-        localStorage.removeItem(`DivSubStatus_card-echo-${i}_${indexPai}_${j}`);
+    if (
+      window.confirm(
+        "Você tem certeza que deseja excluir este item? Esta ação não pode ser desfeita."
+      )
+    ) {
+      const newDivEficiencia = divEficiencia.filter(
+        (item) => item.indexPai !== indexPai
+      );
+      setDivEficiencia(newDivEficiencia);
+      localStorage.setItem("divEficiencia", JSON.stringify(newDivEficiencia));
+      localStorage.removeItem(`selectedCharacter-${indexPai}`);
+      for (let i = 0; i < 5; i++) {
+        localStorage.removeItem(`CardEcho_card-echo-${i}_${indexPai}`);
+        for (let j = 0; j < 5; j++) {
+          localStorage.removeItem(
+            `DivSubStatus_card-echo-${i}_${indexPai}_${j}`
+          );
+        }
       }
     }
   };
