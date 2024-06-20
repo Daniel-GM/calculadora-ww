@@ -52,14 +52,14 @@ const DivSubStatus = ({ index, updateEficiencia, indexPai, idCard }) => {
     if (eficiencia < 40) return "rgba(255,0,0,1)";
     else if (eficiencia < 70) return "rgba(255,255,0,1)";
     else if (eficiencia <= 100) return "rgba(0,255,0,1)";
-    else return "rgba(255,255,255,1)";
+    else return "rgba(255,255,255,0.5)";
   };
 
   const styleEficiencia = {
     marginTop: `5px`,
     width: `90%`,
     height: `5px`,
-    background: `linear-gradient(to right, ${getBarEficiencia()} 0%, ${getBarEficiencia()} ${eficiencia}%, rgba(255, 255, 255, 1) ${eficiencia}%)`,
+    background: `linear-gradient(to right, ${getBarEficiencia()} 0%, ${getBarEficiencia()} ${eficiencia}%, rgba(255, 255, 255, 0.5) ${eficiencia}%)`,
   };
 
   const handleEficiencia = (event) => {
