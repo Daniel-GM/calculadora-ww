@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useId } from "react";
 import "./DivEchoSelect.css";
 
-const DivEchoSelect = ({ indexPai }) => {
-  const id = useId();
+const DivEchoSelect = ({ indexPai, id }) => {
+  // const id = useId();
 
   const echos = [
     {
@@ -356,7 +356,10 @@ const DivEchoSelect = ({ indexPai }) => {
   const handleEchoChange = (event) => {
     const selected = echos.find((echo) => echo.name === event.target.value);
     setSelectedEcho(selected);
-    localStorage.setItem(`selectedEcho-${indexPai}-${id}`, JSON.stringify(selected));
+    localStorage.setItem(
+      `selectedEcho-${indexPai}-${id}`,
+      JSON.stringify(selected)
+    );
   };
 
   const bgImage = {

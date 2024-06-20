@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./DivSubStatus.css";
 
-const DivSubStatus = ({ index, updateEficiencia, indexPai, idCard }) => {
+const DivSubStatus = ({ index, updateEficiencia, indexPai, idCard, id }) => {
   const subStatus = [
     { name: "HP", min: "320", max: "580" },
     { name: "ATK", min: "30", max: "70" },
@@ -18,7 +18,7 @@ const DivSubStatus = ({ index, updateEficiencia, indexPai, idCard }) => {
     { name: "Resonance Liberation DMG Bonus", min: "6.4%", max: "11.6" },
   ];
 
-  const localStorageKey = `DivSubStatus_${idCard}_${indexPai}_${index}`;
+  const localStorageKey = `DivSubStatus_${id}_${indexPai}_${index}`;
 
   const [selectedSubStatus, setSelectedSubStatus] = useState(() => {
     const storedValue = localStorage.getItem(localStorageKey);
@@ -69,16 +69,19 @@ const DivSubStatus = ({ index, updateEficiencia, indexPai, idCard }) => {
 
     const dividendo = value - min;
     const divisor = max - min;
-    const eficienciaCalc = (dividendo / divisor) * 100;
+    const eficienciaCalc = parseFloat(((dividendo / divisor) * 100).toFixed(2));
 
-    if (eficienciaCalc >= 0 && eficienciaCalc <= 100) updateEficiencia(index, eficienciaCalc);
+    if (eficienciaCalc >= 0 && eficienciaCalc <= 100)
+      updateEficiencia(index, eficienciaCalc);
     else updateEficiencia(index, 0);
     setEficiencia(eficienciaCalc);
     setInputValue(event.target.value);
   };
 
   const handleSubStatusChange = (event) => {
-    const selected = subStatus.find((substatus) => substatus.name === event.target.value);
+    const selected = subStatus.find(
+      (substatus) => substatus.name === event.target.value
+    );
     setSelectedSubStatus(selected);
     setEficiencia(0);
     updateEficiencia(index, 0);
@@ -118,7 +121,11 @@ const DivSubStatus = ({ index, updateEficiencia, indexPai, idCard }) => {
             </option>
           ))}
         </select>
-        <input type="number" value={inputValue} onChange={handleEficiencia}></input>
+        <input
+          type="number"
+          value={inputValue}
+          onChange={handleEficiencia}
+        ></input>
       </div>
       <div style={styleEficiencia}></div>
     </div>

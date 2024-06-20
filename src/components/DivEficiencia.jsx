@@ -3,16 +3,6 @@ import CardEcho from "./CardEcho";
 import "./DivEficiencia.css";
 import "./CardEcho.css";
 
-/*
-* Glacio    "90deg, #ffffff00 0%, #266FA140 20%, #2AB0C1 100%"
-* Fusion    "90deg, #ffffff00 0%, #d5babc40 20%, #dc836a 100%"
-* Electro   "90deg, #ffffff00 0%, #7036AB40 20%, #A42EA8 100%"
-* Aero      "90deg, #ffffff00 0%, 134c4c40 20%, #41b2a8 100%"
-* Spectro   "90deg, #ffffff00 0%, #A4932140 20%, #B3A521 100%"
-* Havoc     "90deg, #ffffff00 0%, #97246A40 20%, #831857 100%"
-* Physical  
-*/
-
 const characters = [
   {
     name: "Aalto",
@@ -118,23 +108,30 @@ const characters = [
 
 const DivEficiencia = ({ indexPai }) => {
   const [selectedCharacter, setSelectedCharacter] = useState(characters[0]);
-  const [visibilidade, setVisibilidade] = useState(true)
+  const [visibilidade, setVisibilidade] = useState(true);
 
   useEffect(() => {
-    const savedSelectedCharacter = JSON.parse(localStorage.getItem(`selectedCharacter-${indexPai}`));
+    const savedSelectedCharacter = JSON.parse(
+      localStorage.getItem(`selectedCharacter-${indexPai}`)
+    );
     if (savedSelectedCharacter) {
       setSelectedCharacter(savedSelectedCharacter);
     }
   }, [indexPai]);
 
   const handleTrocaVisibilidade = () => {
-    setVisibilidade(!visibilidade)
-  }
+    setVisibilidade(!visibilidade);
+  };
 
   const handleCharacterChange = (event) => {
-    const selected = characters.find((character) => character.url === event.target.value);
+    const selected = characters.find(
+      (character) => character.url === event.target.value
+    );
     setSelectedCharacter(selected);
-    localStorage.setItem(`selectedCharacter-${indexPai}`, JSON.stringify(selected));
+    localStorage.setItem(
+      `selectedCharacter-${indexPai}`,
+      JSON.stringify(selected)
+    );
   };
 
   const bgImage = {
@@ -154,12 +151,18 @@ const DivEficiencia = ({ indexPai }) => {
           </option>
         ))}
       </select>
-      <div id="testeDiv" onClick={handleTrocaVisibilidade} style={{cursor: "pointer"}} >
+      <div
+        id="testeDiv"
+        onClick={handleTrocaVisibilidade}
+        style={{ cursor: "pointer" }}
+      >
         <div style={bgImage}></div>
         <div style={bgColor}></div>
       </div>
-
-      <div id="div-cards-echo" className={visibilidade ? "visivel" : "invisivel"}>
+      <div
+        id="div-cards-echo"
+        className={visibilidade ? "visivel" : "invisivel"}
+      >
         {Array.from({ length: 5 }, (_, index) => (
           <CardEcho key={index} id={`card-echo-${index}`} indexPai={indexPai} />
         ))}

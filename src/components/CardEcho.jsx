@@ -3,9 +3,9 @@ import "./CardEcho.css";
 import DivEchoSelect from "./DivEchoSelect";
 import DivSubStatus from "./DivSubStatus";
 
-const CardEcho = ({ indexPai }) => {
+const CardEcho = ({ indexPai, id }) => {
   const idCard = useId();
-  const localStorageKey = `CardEcho_${idCard}_${indexPai}`;
+  const localStorageKey = `CardEcho_${id}_${indexPai}`;
 
   const [eficiencias, setEficiencias] = useState(() => {
     const storedValues = localStorage.getItem(localStorageKey);
@@ -40,7 +40,7 @@ const CardEcho = ({ indexPai }) => {
   return (
     <div className="cards-echo">
       <h4 className="score">{calculateScore()}</h4>
-      <DivEchoSelect indexPai={indexPai} />
+      <DivEchoSelect indexPai={indexPai} id={id} />
       {eficiencias.map((_, index) => (
         <DivSubStatus
           key={index}
@@ -48,6 +48,7 @@ const CardEcho = ({ indexPai }) => {
           updateEficiencia={updateEficiencia}
           indexPai={indexPai}
           idCard={idCard}
+          id={id}
         />
       ))}
     </div>
