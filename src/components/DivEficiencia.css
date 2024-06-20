@@ -30,3 +30,11 @@ div#testeDiv div:last-child {
 #eficiencia select {
   margin-top: 25px;
 }
+
+.invisivel {
+  display: none !important;
+}
+
+.visivel {
+  display: flex !important;
+}

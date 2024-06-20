@@ -154,17 +154,16 @@ const DivEficiencia = ({ indexPai }) => {
           </option>
         ))}
       </select>
-      <div id="testeDiv" onClick={handleTrocaVisibilidade} style={{ cursor: 'pointer' }}>
+      <div id="testeDiv" onClick={handleTrocaVisibilidade} style={{cursor: "pointer"}} >
         <div style={bgImage}></div>
         <div style={bgColor}></div>
       </div>
-      {visibilidade &&
-        <div id="div-cards-echo">
-          {Array.from({ length: 5 }, (_, index) => (
-            <CardEcho key={index} id={`card-echo-${index}`} indexPai={indexPai} />
-          ))}
-        </div>
-      }
+
+      <div id="div-cards-echo" className={visibilidade ? "visivel" : "invisivel"}>
+        {Array.from({ length: 5 }, (_, index) => (
+          <CardEcho key={index} id={`card-echo-${index}`} indexPai={indexPai} />
+        ))}
+      </div>
     </div>
   );
 };
