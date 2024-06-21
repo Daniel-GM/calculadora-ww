@@ -33,13 +33,32 @@ const CardEcho = ({ indexPai, id }) => {
     return clampedAverage.toFixed(1);
   };
 
+  const valorTotal = () => {
+    const totalScore = document.getElementById(indexPai)
+    let totalScoreCalc = 0
+    
+    for (let x = 0; x < 5; x++) {
+      const score = document.querySelector(`.score-card-echo-${x}-${indexPai}`)
+      const scoreValue = parseFloat(score.textContent);
+      if(!isNaN(scoreValue))
+        totalScoreCalc += scoreValue
+    }
+    totalScoreCalc /= 5
+
+    if (totalScore != null) totalScore.textContent = totalScoreCalc.toFixed(2)
+  }
+
   useEffect(() => {
     localStorage.setItem(localStorageKey, JSON.stringify(eficiencias));
   }, [eficiencias, localStorageKey]);
 
+  useEffect(() => {
+    valorTotal();
+  }, [eficiencias]);
+
   return (
     <div className="cards-echo">
-      <h4 className="score">{calculateScore()}</h4>
+      <h4 className={`score-${id}-${indexPai}`}>{calculateScore()}</h4>
       <DivEchoSelect indexPai={indexPai} id={id} />
       {eficiencias.map((_, index) => (
         <DivSubStatus

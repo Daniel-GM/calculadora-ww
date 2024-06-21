@@ -70,7 +70,7 @@ const DivSubStatus = ({ index, updateEficiencia, indexPai, idCard, id }) => {
     const dividendo = value - min;
     const divisor = max - min;
     const eficienciaCalc = parseFloat(((dividendo / divisor) * 100).toFixed(2));
-
+    
     if (eficienciaCalc >= 0 && eficienciaCalc <= 100)
       updateEficiencia(index, eficienciaCalc);
     else updateEficiencia(index, 0);

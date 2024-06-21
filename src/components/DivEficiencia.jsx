@@ -142,6 +142,12 @@ const DivEficiencia = ({ indexPai }) => {
     background: `linear-gradient(${selectedCharacter.gradient})`,
   };
 
+  const totalScrore = {
+    zIndex: "11",
+    WebkitTextStroke: "0.3px #000",
+    marginRight: "30px",
+  }
+
   return (
     <div>
       <select onChange={handleCharacterChange} value={selectedCharacter.url}>
@@ -157,6 +163,7 @@ const DivEficiencia = ({ indexPai }) => {
         style={{ cursor: "pointer" }}
       >
         <div style={bgImage}></div>
+        <h2 style={totalScrore} id={indexPai}></h2>
         <div style={bgColor}></div>
       </div>
       <div
