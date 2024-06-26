@@ -21,3 +21,19 @@ button.accordion-button,
     padding: 5px 10px;
     border-radius: 15px;
 }
+
+.rotativo button {
+    background: linear-gradient(90deg, #80ccff 0%, #80ccff40 50%, #ffffff00 100%) !important;
+}
+
+.em-breve button {
+    background: linear-gradient(90deg, #ffee80 0%, #ffee8040 50%, #ffffff00 100%) !important;
+}
+
+.finalizado button {
+    background: linear-gradient(90deg, #ff8088 0%, #ff808840 50%, #ffffff00 100%) !important;
+}
+
+.em-andamento button {
+    background: linear-gradient(90deg, #85ffb8 0%, #85ffb840 50%, #ffffff00 100%) !important;
+}

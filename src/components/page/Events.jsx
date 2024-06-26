@@ -72,6 +72,7 @@ const Events = () => {
         horaInicio="19:00"
         horaFim="02:00"
         text="-"
+        rotativo={true}
       />
     </Accordion>
   );
