@@ -63,6 +63,16 @@ const Events = () => {
         horaFim="05:59"
         text="-"
       />
+
+      <DivEventos
+        eventKey="6"
+        title="Update 1.1"
+        dataInicio="26/06"
+        dataFim="27/06"
+        horaInicio="19:00"
+        horaFim="02:00"
+        text="-"
+      />
     </Accordion>
   );
 };
