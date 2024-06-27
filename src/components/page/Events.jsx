@@ -67,8 +67,8 @@ const Events = () => {
       <DivEventos
         eventKey="6"
         title="Update 1.1"
-        dataInicio="26/06"
-        dataFim="27/06"
+        dataInicio="27/06"
+        dataFim="28/06"
         horaInicio="19:00"
         horaFim="02:00"
         text="-"
