@@ -29,7 +29,7 @@ const Events = () => {
               <br/><br/>4★ Danjin: (Havoc / Sword)
               <br/>4★ Yangyang: (Aero / Sword)
               <br/>4★ Sanhua: (Glacio / Sword)`}
-        rotativo={false}
+        rotativo={true}
       />
 
       <DivEventos
@@ -43,7 +43,7 @@ const Events = () => {
               <br/><br/>4★ Discord
               <br/>4★ Commando of Conviction
               <br/>4★ Amity Accord`}
-        rotativo={false}
+        rotativo={true}
       />
 
       <DivEventos
