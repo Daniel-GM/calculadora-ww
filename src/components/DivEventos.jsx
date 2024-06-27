@@ -80,7 +80,7 @@ const DivEventos = ({ eventKey, title, text, dataInicio, horaInicio, dataFim, ho
       <Accordion.Body style={bodyStyle}>
         <p>{tempoBody}</p>
         <p>{dataInicio} {horaInicio} ~ {dataFim} {horaFim}</p>
-        Descrição: {text}
+        <p>Descrição: <span dangerouslySetInnerHTML={{ __html: text }} /></p>
       </Accordion.Body>
     </Accordion.Item>
   );
